@@ -1,4 +1,4 @@
-class AddStories < ActiveRecord::Migration
+class AddStory < ActiveRecord::Migration
   def self.up
     create_table :stories do |t|
       t.column :title, :string, :null => false
