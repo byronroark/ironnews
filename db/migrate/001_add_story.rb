@@ -3,7 +3,7 @@ class AddStory < ActiveRecord::Migration
     create_table :stories do |t|
       t.column :title, :string, :null => false
       t.column :link, :string, :null => false
-      t.column :email, :string, :null => false
+      t.column :author_id, :integer, :null => false
       t.timestamps :null => true
     end
   end

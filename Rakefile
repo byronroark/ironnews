@@ -16,7 +16,7 @@ end
 
 ActiveRecordMigrations.load_tasks
 
-desc "Say hello to the world"
-task "hello" do
-  puts "Hello world"
-end
+# desc "Say hello to the world"
+# task "hello" do
+#   puts "Hello world"
+# end
