@@ -29,8 +29,8 @@
         <div class="content">
           <% Story.all.order('created_at desc').each do |story| %>
           <ol>
-            <li><a class="link" href="<%= story.link %>"><%= story.title %></a></li>
-            <span><a class="link" href="mailto:<%= story.author.email %>"><%= story.author.email %></a> posted on <%= story.created_at %></span>
+            <li><a class="link" href="<%= story.link %>"><%= story.title.downcase %></a></li>
+            <span>posted by <a class="link" href="mailto:<%= story.author.email %>"><%= story.author.email %></a> on <%= story.created_at %></span>
           </ol>
           <% end %>
         </div>
