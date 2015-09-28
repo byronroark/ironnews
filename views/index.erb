@@ -9,22 +9,37 @@
   <body>
     <div class="square_corners navbar navbar-inverse">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <span class="navbar-brand"><a class="top_brand nav navbar-nav" href="/">hacker news</a></span>
-          <ul class="nav navbar-nav">
-            <li><a href="#">new</a></li>
-            <li><a href="#">comments</a></li>
-            <li><a href="#">show</a></li>
-            <li><a href="#">ask</a></li>
-            <li><a href="#">jobs</a></li>
-            <li><a href="#">submit</a></li>
-          </ul>
+        <div class="col-xs-12 col-sm-12 col-md-8">
+          <div class="navbar-header">
+            <span class="navbar-brand"><a id="top_brand" href="/">hacker news</a></span>
+            <ul class="nav navbar-nav">
+              <li><a href="#">new</a></li>
+              <li><a href="#">comments</a></li>
+              <li><a href="#">show</a></li>
+              <li><a href="#">ask</a></li>
+              <li><a href="#">jobs</a></li>
+              <li><a href="#">submit</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
-
+        <div class="content">
+          <% Story.all.order('created_at desc').each do |story| %>
+          <ol>
+            <li><a class="link" href="<%= story.link %>"><%= story.title %></a></li>
+            <span><a class="link" href="mailto:<%= story.author.email %>"><%= story.author.email %></a> posted on <%= story.created_at %></span>
+          </ol>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="footer container">
+      <div class="row">
+      <p>
+      </p>
       </div>
     </div>
   </body>

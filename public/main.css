@@ -1,8 +1,25 @@
-.top_brand a, a:link, a:visited, a:hover, a:active {
+#top_brand a, a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: #edfa00;
 }
 
+body {
+  background-color: #dddddd;
+}
+
+.link {
+  background-color: #171717;
+  padding: 1px;
+}
+
 .square_corners {
   border-radius: 0 !important;
+}
+
+.footer {
+  position: relative;
+  background-color: #000;
+  width: 100%;
+  bottom: 0;
+  left: 0;
 }
