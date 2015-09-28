@@ -7,6 +7,10 @@ body {
   background-color: #dddddd;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .link {
   background-color: #171717;
   padding: 1px;

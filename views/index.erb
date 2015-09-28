@@ -27,18 +27,26 @@
     <div class="container">
       <div class="row">
         <div class="content">
-          <% Story.all.order('created_at desc').each do |story| %>
-          <ol>
-            <li><a class="link" href="<%= story.link %>"><%= story.title.downcase %></a></li>
+          <% @stories.each_with_index do |story, index| %>
+          <ul>
+            <li><%= index + 1 %>. <a class="link" href="<%= story.link %>"><%= story.title.downcase %></a></li>
             <span>posted by <a class="link" href="mailto:<%= story.author.email %>"><%= story.author.email %></a> on <%= story.created_at %></span>
-          </ol>
+          </ul>
           <% end %>
         </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+      <p>
+        <a class="link" href="/?page=<% @next_page %>">next &gt;&gt;</a>
+      </p>
       </div>
     </div>
     <div class="footer container">
       <div class="row">
       <p>
+
       </p>
       </div>
     </div>

@@ -25,5 +25,18 @@ class Story < ActiveRecord::Base
 end
 
 get '/' do
+  per_page = 10
+
+  if params[:page]
+    page_offset = per_page * (params[:page].to_i - 1)
+    @prev_page = params[:page].to_i - 1
+    @next_page = params[:page].to_i + 1
+  else
+    page_offset = 0
+    @prev_page = nil
+    @next_page = 2
+  end
+
+  @stories = Story.all.order('created_at desc').offset(page_offset).limit(10)
   erb :index
 end
