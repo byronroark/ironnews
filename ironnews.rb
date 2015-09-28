@@ -24,8 +24,6 @@ class Story < ActiveRecord::Base
   validates :title, presence: true
 end
 
-Tilt.register Tilt::ERBTemplate, 'html.erb'
-
 get '/' do
   erb :index
 end

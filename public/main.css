@@ -1,0 +1,8 @@
+.top_brand a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #edfa00;
+}
+
+.square_corners {
+  border-radius: 0 !important;
+}
